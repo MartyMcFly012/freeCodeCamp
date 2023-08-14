@@ -17,13 +17,14 @@ dashedName: natural-language-processing-with-rnns-building-the-model
 Fill in the blanks below to complete the `build_model` function:
 
 ```py
-def build_mode(vocab_size, embedding_dim, rnn_units, batch_size):
+def build_model(vocab_size, embedding_dim, rnn_units, batch_size):
     model = tf.keras.Sequential([
         tf.keras.layers.Embedding(vocab_size,
                                   embedding_dim,
                                   batch_input_shape=[batch_size, None]),
         tf.keras.layers.__A__(rnn_units,
                               return_sequences=__B__,
+                              stateful=True,
                               recurrent_initializer='glorot_uniform),
         tf.keras.layers.Dense(__C__)
     ])
